@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from projeto5_website.models import Pergunta
+from projeto5_website.models import Pergunta, Alternativa
 
 from django.http import HttpResponse, HttpResponseRedirect
 from projeto5_website.forms import PerguntaForm
@@ -21,4 +21,11 @@ def pergunta_form(request):
   else:
     form = PerguntaForm()
   return render(request, "projeto5_website/pergunta_form.html", {'form': form})
-  
+
+def teste(request, teste):
+  #TODO: Criar um dicionario de perguntas/alternativas
+  perguntas_dict = {} 
+  for pergunta in Pergunta.objects.filter(teste__id=teste):
+    perguntas_dict[pergunta.enunciado] = Alternativa.objects.filter(pergunta=pergunta)
+  return render(request, "projeto5_website/teste.html",
+            {"perguntas": perguntas_dict})
