@@ -1,9 +1,21 @@
 {% extends "projeto5_website/base.html" %}
 {% block content %}
-  {% for pergunta,alternativas in perguntas.items %}
-    <h3>{{pergunta}}</h3>
-    {% for alternativa in alternativas %}
-      <li>{{alternativa.conteudo}}</li>
+  <form method="post">
+    {% csrf_token %}
+    <input id="ra" type="text" placeholder="Digite seu RA" name="ra">
+    <br>
+    <input id="name" type="text" placeholder="Nome Completo" name="nome">
+    <br>
+    <input id="email" type="text" placeholder="Digite seu Email" name="email">
+    {% for pergunta,alternativas in perguntas.items %}
+      <h3>{{pergunta}}</h3>
+      <fieldset>
+        {% for alternativa in alternativas %}
+          <input type="radio" name="{{pergunta}}" value="{{alternativa.perfil}}">
+          <label>{{alternativa.conteudo}}</label><br>
+        {% endfor %}
+      </fieldset>
     {% endfor %}
-  {% endfor %}
+    <button type="submit ">Enviar</button>
+  </form>
 {% endblock %}
