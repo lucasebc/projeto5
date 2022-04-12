@@ -1,21 +1,63 @@
 {% extends "projeto5_website/base.html" %}
 {% block content %}
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="jumbotron">
+				<h2>
+					Formulário DISC!
+				</h2>
+				<p>
+					Este é um formulário para verificar seu perfil, desta maneira saberemos mais sobre você. 
+          Isso nos ajudará a escolher as vagas de emprego mais promissoras
+				</p>
+				<p>
+					<a class="btn btn-primary btn-large" href="https://pt.wikipedia.org/wiki/DISC_(psicologia)">Saiba Mais</a>
+				</p>
+			</div>
+    </div>
+  </div>
   <form method="post">
     {% csrf_token %}
-    <input id="ra" type="text" placeholder="Digite seu RA" name="ra">
-    <br>
-    <input id="name" type="text" placeholder="Nome Completo" name="nome">
-    <br>
-    <input id="email" type="text" placeholder="Digite seu Email" name="email">
-    {% for pergunta,alternativas in perguntas.items %}
-      <h3>{{pergunta}}</h3>
-      <fieldset>
-        {% for alternativa in alternativas %}
-          <input type="radio" name="{{pergunta}}" value="{{alternativa.perfil}}">
-          <label>{{alternativa.conteudo}}</label><br>
-        {% endfor %}
-      </fieldset>
-    {% endfor %}
-    <button type="submit ">Enviar</button>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="form-group">
+            <input id="ra" class="form-control" type="text" placeholder="Digite seu RA" name="ra">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <input id="name" class="form-control" type="text" placeholder="Nome Completo" name="nome">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <input id="email"  class="form-control" type="text" placeholder="Digite seu Email" name="email">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+            {% for pergunta,alternativas in perguntas.items %}
+              <h3>{{pergunta}}</h3>
+              <fieldset>
+                {% for alternativa in alternativas %}
+                  <input type="radio" name="{{pergunta}}" value="{{alternativa.perfil}}">
+                  <label>{{alternativa.conteudo}}</label><br>
+                {% endfor %}
+              </fieldset>
+            {% endfor %}
+            <button type="submit" class="btn btn-primary">
+              Enviar
+            </button>
+        </div>
+      </div>
+    </div> 
   </form>
+</div>
+
 {% endblock %}
