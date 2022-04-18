@@ -24,6 +24,11 @@ Ativando o virtual env
 pip install -r requirements.txt
 ```
 
+#### Passo 3 - Executando migrations
+
+```
+python manage.py migrate --run-syncdb
+```
 
 #### Passo 3 - Carregando Fixtures
 
