@@ -32,4 +32,5 @@ jobs:
         ls
     - name: Run Tests
       run: |
+        cd projeto5
         python manage.py test
