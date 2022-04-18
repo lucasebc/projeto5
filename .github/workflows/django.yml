@@ -27,7 +27,7 @@ jobs:
         pip install -r requirements.txt
     - name: seila
       run: |
-        touch seila.py < "print('oi')"
+        echo "print('oi')" > seila.py
         python seila.py
     - name: Run Tests
       run: |
