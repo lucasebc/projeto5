@@ -30,20 +30,20 @@ pip install -r requirements.txt
 python manage.py migrate --run-syncdb
 ```
 
-#### Passo 3 - Carregando Fixtures
+#### Passo 4 - Carregando Fixtures
 
 ```
 python manage.py loaddata projeto5_website\fixtures\initial_data.json
 ```
 
-#### Passo 4 - Criando superusuário
+#### Passo 5 - Criando superusuário
 
 ```
 python manage.py createsuperuser
 ```
 
 
-#### Passo 5 - Rodando Server
+#### Passo 6 - Rodando Server
 
 ```
 python manage.py runserver
