@@ -25,6 +25,9 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
+    - name: seila
+      run: |
+        python /package5/
     - name: Run Tests
       run: |
-        python package5/package5/manage.py test
+        python manage.py test
