@@ -49,4 +49,4 @@ python manage.py createsuperuser
 python manage.py runserver
 ```
 
-Aponte seu navegador para [Link](http://localhost:8000/)
+Abra seu navegador para [Link](http://localhost:8000/)
