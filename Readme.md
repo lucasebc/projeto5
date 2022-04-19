@@ -50,3 +50,5 @@ python manage.py runserver
 ```
 
 Abra seu navegador para [Link](http://localhost:8000/)
+
+teste do auto commit
