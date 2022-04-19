@@ -23,5 +23,5 @@ jobs:
         python-version: ${{ matrix.python-version }}
     - name: Run Tests
       run: |
-        git checkout main
-        git merge teste
+        git checkout origin main
+        git merge origin teste
