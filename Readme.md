@@ -50,3 +50,7 @@ python manage.py runserver
 ```
 
 Abra seu navegador para [Link](http://localhost:8000/)
+
+# Github actions
+- Quando é feita uma alteração através de um merge ou pull request na branch teste, a action django.yml faz o merge para a branch main.
+- Quando é feita uma alteração através de um merge ou pull request na branch main, a action django.yml roda o teste do django.
