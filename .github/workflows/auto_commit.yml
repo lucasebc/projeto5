@@ -37,6 +37,14 @@ jobs:
           target_branch: main
           github_token: ${{ github.token }}
           
+      - name: dont merge
+        if: false == contains(github.event.pull_request.labels.*.name, 'dale')
+        uses: actions/github-script@v3
+        with:
+          script: |
+            core.setFailed('Label não adicionado.')
+          
+          
       - name: confirmação
         if: contains(github.event.pull_request.labels.*.name, 'dale')
         run: echo label adicionado
