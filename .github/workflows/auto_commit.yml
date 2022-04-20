@@ -40,7 +40,7 @@ jobs:
       - name: confirmação
         if: contains(github.event.pull_request.labels.*.name, 'dale')
         run: echo label adicionado
-      - name: confirmação
+      - name: não confirmação
         if: false == contains(github.event.pull_request.labels.*.name, 'dale')
         run: echo label não adicionado
     
