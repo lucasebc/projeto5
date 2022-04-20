@@ -56,4 +56,4 @@ Abra seu navegador para [Link](http://localhost:8000/)
 - Quando é feita uma alteração através de um merge ou pull request na branch main, a action django.yml roda o teste do django.
 
 teste do auto commit
-teste auto commit sem o label
+outro teste auto commit sem o label
